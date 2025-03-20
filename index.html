@@ -168,21 +168,26 @@
         </p>
           <!-- 图片居中 -->
           <div class="has-text-centered">
-            <img src="./static/images/introduction.png" alt="Introduction Image" style="width: 70%; height: auto;">
+            <img src="./static/images/introduction.png" alt="Introduction Image" style="width: 95%; height: auto;">
           </div>
           <p>
-          To overcome these challenges, we introduce ReasonGrounder, a novel framework guided by large vision-language models (LVLMs) that leverages hierarchical 3D Gaussian feature fields. These fields enable adaptive grouping of objects based on their physical scale, making it possible to accurately localize objects in a scene even when occluded. By combining the power of LVLMs with 3D Gaussian splatting, ReasonGrounder can interpret implicit language instructions and select Gaussian groups based on object characteristics.
-          </p>
+          ReasonGrounder employs 3D Gaussian Splatting (3DGS), which represents scenes as 3D Gaussian collections with tile-based splatting for efficient, high-resolution rendering. In particular, a standard 3DGS scene is constructed, and 2D segmentation masks from SAM~\cite{kirillov2023segment} are projected into a 3D field. For each mask, a 3D scale is calculated from the depth rendered by the 3DGS. To enhance each Gaussian’s view-independent representation, ReasonGrounder appends a latent feature vector mapped into hierarchical language and instance features via two shallow MLPs: a language mapper and an instance mapper. CLIP embeddings supervise language features across views for multi-view consistency, while instance features refine 2D mask candidates using contrastive loss and 3D scale, supporting feature-based Gaussian grouping.
+          Further, to aid localization, an instruction-conditioned mechanism guided by LVLM selects the reference view most aligned with the instruction. This view and instruction enable comprehension of the target object of intent. Using 3D scale and hierarchical feature Gaussians, ReasonGrounder achieves precise 3D localization and amodal perception in novel views.          </p>
           <p>
-          Moreover, ReasonGrounder integrates 2D segmentation masks from the Segment Anything Model (SAM) and multi-view CLIP embeddings to enhance its object localization capabilities. This innovative combination of techniques allows ReasonGrounder to offer highly accurate 3D grounding and reasoning, even in novel and occluded views.
           </p>
+          <h3 class="subtitle is-4">Main Contributions:</h3>
+          <ul class="content">
+            <li>Enhanced 3D Visual Grounding: We address limitations in open-vocabulary 3D visual grounding, such as reliance on 3D annotations and limited semantic understanding, by using hierarchical 3D Gaussian fields with LVLMs for robust grounding and reasoning.</li>
+            <li>A Novel ReasonGrounder Framework: The proposed ReasonGrounder leverages hierarchical 3D feature Gaussian fields for adaptive Gaussian grouping with 3D scale, enabling effective open-vocabulary 3D visual grounding and reasoning. ReasonGrounder interprets implicit instructions using large vision-language models (LVLM) and accurately localizes occluded objects with hierarchical 3D feature Gaussian splatting.</li>
+            <li>Hierarchical Feature Splatting and Amodal Perception: ReasonGrounder empowers the hierarchical features of 3D Gaussians and selects Gaussian groups based on the target object's scale. LVLM aids in interpreting complex instructions and locating objects even when partially or fully occluded.</li>
+            <li>Dataset Contributions: A new ReasoningGD dataset offers over 10K complex scenes with 2 million annotations, including point clouds, RGB-D images with detailed labels, camera poses, and 2D modal/amodal masks of views, enabling rigorous evaluation of 3D visual grounding with implicit instruction handling and occlusion robustness.</li>
+          </ul>
         </div>
       </div>
     </div>
     <!--/ Introduction. -->
   </div>
 </section>
-
 
   
 
