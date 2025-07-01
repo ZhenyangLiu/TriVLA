@@ -200,18 +200,21 @@
   
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Introduction. -->
+    <!-- Results -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Results</h2>
         <div class="content has-text-justified">
-          <!-- 图片居中 -->
-          <div class="has-text-centered">
-            <img src="./static/images/qual_1.png" alt="Introduction Image" style="width: 95%; height: auto;">
+          <!-- 并排图片 -->
+          <div class="columns">
+            <div class="column">
+              <img src="./static/images/qual_1.png" alt="Result Image 1" style="width: 100%; height: auto;">
+            </div>
+            <div class="column">
+              <img src="./static/images/qual_2.png" alt="Result Image 2" style="width: 100%; height: auto;">
+            </div>
           </div>
-          <div class="has-text-centered">
-            <img src="./static/images/qual_2.png" alt="Introduction Image" style="width: 95%; height: auto;">
-          </div>
+
           <ul class="content">
             <li> ReasonGrounder uses LVLM to process implicit queries requiring complex reasoning and select the Gaussian group for 3D localization. The results confirm that ReasonGrounder excels in localizing target objects, benefiting from the 3D consistency. Additionally, ReasonGrounder provides explanatory answers, showcasing its strength in implicit instruction reasoning, 3D understanding, and conversation. To test robustness, we selected five challenging scenes with small proportions, including multi-hierarchical structures and similar objects, along with ten text queries per scene from the LERF and ReasoningGD datasets.</li>
             <li>Existing open-vocabulary 3D visual grounding methods struggle with localizing complete objects in novel views with occlusion, limiting their real-world applicability. In contrast, ReasonGrounder uses hierarchical Gaussian grouping to effectively tackle this issue. The ReasoningGD dataset introduced here includes scenes with amodal binary mask annotations, accurately representing the full shape of occluded objects from different views. These results demonstrate that ReasonGrounder successfully achieves amodal perception, accurately localizing complete objects regardless of the occlusion level.</li>
@@ -219,7 +222,7 @@
         </div>
       </div>
     </div>
-    <!--/ Introduction. -->
+    <!--/ Results -->
   </div>
 </section>
 
