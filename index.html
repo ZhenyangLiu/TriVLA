@@ -115,10 +115,10 @@
     <div class="hero-body">
       <!-- 使用 Flexbox 居中 -->
       <div class="has-text-centered">
-        <img src="./static/images/teaser.png" alt="Teaser Image" style="width: 70%; height: auto;">
+        <img src="./static/images/teaser.png" alt="Teaser Image" style="width: 90%; height: auto;">
       </div>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">TriVLA</span> is a Vision-Language-Action (VLA) system with a triple-system architecture. The TriVLA converts image observations and language instructions into token sequences, which are processed by the Vision-Language Model (VLM) for reasoning using common knowledge, and the Stable Video Diffusion Model (VDM) as the world model for both current and future predictions. The outputs of the VLM and VDM, along with robot state and action encodings, are fed into the policy learning module to generate motor actions. The TriVLA can be used directly to perform tasks based on prompts or fine-tuned with high-quality data to support complex multi-stage tasks.	
+        TriVLA</span> is a Vision-Language-Action (VLA) system with a triple-system architecture. The TriVLA converts image observations and language instructions into token sequences, which are processed by the Vision-Language Model (VLM) for reasoning using common knowledge, and the Stable Video Diffusion Model (VDM) as the world model for both current and future predictions. The outputs of the VLM and VDM, along with robot state and action encodings, are fed into the policy learning module to generate motor actions. The TriVLA can be used directly to perform tasks based on prompts or fine-tuned with high-quality data to support complex multi-stage tasks.	
       </h2>
     </div>
   </div>
@@ -133,13 +133,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-          Recent advancements in vision-language models (VLMs) for common-sense reasoning have led to the development of vision-language-action (VLA) models, enabling robots to perform generalized manipulation. Although existing autoregressive VLA methods design a specific architecture like dual-system to leverage large-scale pretrained knowledge, they tend to capture static information, often neglecting the dynamic aspects vital for embodied tasks.
-          </p>
-          <p>
-          To this end, we propose TriVLA, a unified Vision-Language-Action model with a triple-system architecture for general robot control. The vision-language module (System 2) interprets the environment through vision and language instructions. The dynamics perception module (System 3) inherently produces visual representations that encompass both current static information and predicted future dynamics, thereby providing valuable guidance for policy learning. TriVLA utilizes pre-trained VLM model and fine-tunes pre-trained video foundation model on robot datasets along with internet human manipulation data. The subsequent policy learning module (System 1) generates fluid motor actions in real time.
-          </p>
-          <p>
-          Experimental evaluation demonstrates that TriVLA operates at approximately 36 Hz and surpasses state-of-the-art imitation learning baselines on standard simulation benchmarks as well as challenging real-world manipulation tasks.
+          Recent advancements in vision-language models (VLMs) for common-sense reasoning have led to the development of vision-language-action (VLA) models, enabling robots to perform generalized manipulation. Although existing autoregressive VLA methods design a specific architecture like dual-system to leverage large-scale pretrained knowledge, they tend to capture static information, often neglecting the dynamic aspects vital for embodied tasks. To this end, we propose TriVLA, a unified Vision-Language-Action model with a triple-system architecture for general robot control. The vision-language module (System 2) interprets the environment through vision and language instructions. The dynamics perception module (System 3) inherently produces visual representations that encompass both current static information and predicted future dynamics, thereby providing valuable guidance for policy learning. TriVLA utilizes pre-trained VLM model and fine-tunes pre-trained video foundation model on robot datasets along with internet human manipulation data. The subsequent policy learning module (System 1) generates fluid motor actions in real time. Experimental evaluation demonstrates that TriVLA operates at approximately 36 Hz and surpasses state-of-the-art imitation learning baselines on standard simulation benchmarks as well as challenging real-world manipulation tasks.
           </p>
         </div>
       </div>
