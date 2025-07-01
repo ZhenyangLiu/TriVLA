@@ -69,8 +69,8 @@
             <span class="author-block"><sup>1</sup>Fudan University,</span>
             <span class="author-block"><sup>2</sup>Shanghai Innovation Institute,</span>
           </div>
-          <p class="has-text-weight-bold has-text-dark is-size-4">CVPR 2025</p>
-          <div class="column has-text-centered">
+<!--           <p class="has-text-weight-bold has-text-dark is-size-4">CVPR 2025</p>
+          <div class="column has-text-centered"> -->
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
@@ -115,7 +115,7 @@
     <div class="hero-body">
       <!-- 使用 Flexbox 居中 -->
       <div class="has-text-centered">
-        <img src="./static/images/teaser.png" alt="Teaser Image" style="width: 90%; height: auto;">
+        <img src="./static/images/teaser.png" alt="Teaser Image" style="width: 100%; height: auto;">
       </div>
       <h2 class="subtitle has-text-centered">
         TriVLA</span> is a Vision-Language-Action (VLA) system with a triple-system architecture. The TriVLA converts image observations and language instructions into token sequences, which are processed by the Vision-Language Model (VLM) for reasoning using common knowledge, and the Stable Video Diffusion Model (VDM) as the world model for both current and future predictions. The outputs of the VLM and VDM, along with robot state and action encodings, are fed into the policy learning module to generate motor actions. The TriVLA can be used directly to perform tasks based on prompts or fine-tuned with high-quality data to support complex multi-stage tasks.	
@@ -148,6 +148,7 @@
     <!-- Introduction. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+        <h3 class="title is-3">Comparison between previous dual-system architectures and our triple-system approach.</h3>
         <div class="content has-text-justified">
         </p>
           <!-- 图片居中 -->
@@ -155,7 +156,7 @@
             <img src="./static/images/system.png" alt="Introduction Image" style="width: 100%; height: auto;">
           </div>
           <p>
-          Comparison between previous dual-system architectures and our triple-system approach. Our TriVLA employs a unified triple-system compositional architecture that integrates world knowledge (System 2) and the world model (System 3), both critical for general policy learning. Prior dual-system methods typically addressed only one component, failing to unify both.
+          Our TriVLA employs a unified triple-system compositional architecture that integrates world knowledge (System 2) and the world model (System 3), both critical for general policy learning. Prior dual-system methods typically addressed only one component, failing to unify both.
           </p>
           <p>
           </p>
