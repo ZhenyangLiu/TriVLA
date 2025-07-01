@@ -227,41 +227,23 @@
 </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video Results</h2>
-        
-        <!-- 并排视频容器 -->
-        <div class="columns is-vcentered">
-          <!-- 视频1 -->
-          <div class="column">
-            <video controls style="width:100%; border-radius:8px;">
-              <source src="./static/videos/v1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-<!--             <p class="has-text-centered mt-2">Video 1 说明文字</p>
-          </div> -->
-          
-          <!-- 视频2 -->
-          <div class="column">
-            <video controls style="width:100%; border-radius:8px;">
-              <source src="./static/videos/v2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-<!--             <p class="has-text-centered mt-2">Video 2 说明文字</p> -->
-          </div>
-        </div>
-
-        <!-- 其他内容 -->
-        <div class="content mt-5">
-          <!-- 你的文本内容 -->
-        </div>
-      </div>
-    </div>
+<div class="columns is-vcentered is-variable is-4">
+  <!-- 视频1 -->
+  <div class="column">
+    <video controls style="width:100%; max-width:100%; border-radius:8px;">
+      <source src="./static/videos/v1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
-</section>
+  
+  <!-- 视频2 -->
+  <div class="column">
+    <video controls style="width:100%; max-width:100%; border-radius:8px;">
+      <source src="./static/videos/v2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
 
 
 
