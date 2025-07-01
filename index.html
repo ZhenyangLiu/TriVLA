@@ -173,6 +173,30 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Introduction. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">The pipeline of our TriVLA.</h2>
+        <div class="content has-text-justified">
+        </p>
+          <!-- 图片居中 -->
+          <div class="has-text-centered">
+            <img src="./static/images/pipeline.png" alt="Introduction Image" style="width: 100%; height: auto;">
+          </div>
+          <p>
+          Our TriVLA adopts a triple-system compositional architecture on the basis of the existing dual-system structure. The System 2 vision-language module employs a pre-trained Eagle-2 Vision-Language Model (VLM) to process the robot’s visual inputs and language instructions, enabling environmental interpretation and task goal understanding. The System 3 dynamics perception module uses a general-purpose video diffusion model to capture entire video sequences and predict future frames based on current observations and task instructions.	Subsequently, the System 1 policy learning module—trained using action flow-matching—cross-attends to the output tokens from Systems 2 and 3, and employs embodiment-specific encoders and decoders to handle variable state and action dimensions for generating motor actions.	
+          </p>
+          <p>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Introduction. -->
+  </div>
+</section>
+
   
 <section class="section">
   <div class="container is-max-desktop">
