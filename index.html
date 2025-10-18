@@ -119,7 +119,7 @@
     <div class="hero-body">
       <!-- 使用 Flexbox 居中 -->
       <div class="has-text-centered" style="margin-top: 1em;">
-        <video controls style="width:100%; max-width:720px;">
+        <video controls style="width:100%; max-width:1080px;">
           <source src="./static/images/demo_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -141,7 +141,7 @@ These results highlight the potential of episodic world model reasoning as a sol
         <img src="./static/images/teaser.png" alt="Teaser Image" style="width: 100%; height: auto;">
       </div>
       <h2 class="subtitle has-text-centered">
-        TriVLA</span> is a Vision-Language-Action (VLA) system with a triple-system architecture. The TriVLA converts image observations and language instructions into token sequences, which are processed by the Vision-Language Model (VLM) for reasoning using common knowledge, and the Stable Video Diffusion Model (VDM) as the world model for both current and future predictions. The outputs of the VLM and VDM, along with robot state and action encodings, are fed into the policy learning module to generate motor actions. The TriVLA can be used directly to perform tasks based on prompts or fine-tuned with high-quality data to support complex multi-stage tasks.	
+        TriVLA</span> is a unified Vision-Language-Action framework that adopts a triple-system architecture inspired by the episodic world model. Image and language inputs are processed by a Vision-Language Model for multimodal perception. A Video Diffusion Model provides dynamic world modeling and future prediction. The policy module integrates sequential outputs, robot state, and action history and generates real-time actions for complex manipulation tasks.
       </h2>
     </div>
   </div>
@@ -156,7 +156,11 @@ These results highlight the potential of episodic world model reasoning as a sol
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-          Recent advancements in vision-language models (VLMs) for common-sense reasoning have led to the development of vision-language-action (VLA) models, enabling robots to perform generalized manipulation. Although existing autoregressive VLA methods design a specific architecture like dual-system to leverage large-scale pretrained knowledge, they tend to capture static information, often neglecting the dynamic aspects vital for embodied tasks. To this end, we propose TriVLA, a unified Vision-Language-Action model with a triple-system architecture for general robot control. The vision-language module (System 2) interprets the environment through vision and language instructions. The dynamics perception module (System 3) inherently produces visual representations that encompass both current static information and predicted future dynamics, thereby providing valuable guidance for policy learning. TriVLA utilizes pre-trained VLM model and fine-tunes pre-trained video foundation model on robot datasets along with internet human manipulation data. The subsequent policy learning module (System 1) generates fluid motor actions in real time. Experimental evaluation demonstrates that TriVLA operates at approximately 36 Hz and surpasses state-of-the-art imitation learning baselines on standard simulation benchmarks as well as challenging real-world manipulation tasks.
+          Recent advances in vision–language models (VLMs) have enabled robots to follow open-ended instructions and demonstrate impressive commonsense reasoning. However, current vision–language–action (VLA) frameworks primarily rely on static representations and limited temporal context, restricting agents to short-horizon, reactive behaviors and hindering robust generalization in dynamic embodied environments.
+Inspired by cognitive neuroscience theories of episodic memory, we are, to our knowledge, among the first to introduce a formalized episodic world model in VLA, enabling embodied robots to accumulate, recall, and predict sequential experiences.
+As an instantiation of this concept, our unified TriVLA realizes the episodic world model through a triple-system architecture: integrating multimodal grounding from a pretrained VLM (System 2) and temporally rich dynamics perception from a video diffusion model (System 3). This enables the agent to accumulate and recall sequential experiences, interpret current contexts, and predict future environmental evolution.
+Guided by episodic representations that span both the past and anticipated future, the downstream policy (System 1) generates coherent, context-aware action sequences through flow-matching and cross-modal attention mechanisms.
+Experimental results show that TriVLA operates efficiently at ~36 Hz and consistently outperforms baseline models on standard benchmarks and challenging real-world manipulation tasks. It demonstrates strong long-horizon planning and open-ended intent understanding, showcasing the advantages of episodic world model-inspired reasoning for robust, generalizable robot intelligence.
           </p>
         </div>
       </div>
@@ -179,7 +183,7 @@ These results highlight the potential of episodic world model reasoning as a sol
             <img src="./static/images/system.png" alt="Introduction Image" style="width: 100%; height: auto;">
           </div>
           <p>
-          Our TriVLA employs a unified triple-system compositional architecture that integrates world knowledge (System 2) and the world model (System 3), both critical for general policy learning. Prior dual-system methods typically addressed only one component, failing to unify both.
+          Comparison between dual-system architectures and our episodic world model-guided TriVLA. TriVLA implements the episodic world model using a triple-system architecture. In contrast, previous dual-system methods relied on static representations and limited temporal context, which restricted agents to short-horizon, reactive behaviors in dynamic environments.
           </p>
           <p>
           </p>
@@ -209,7 +213,7 @@ These results highlight the potential of episodic world model reasoning as a sol
             <img src="./static/images/pipeline.png" alt="Introduction Image" style="width: 100%; height: auto;">
           </div>
           <p>
-          Our TriVLA adopts a triple-system compositional architecture on the basis of the existing dual-system structure. The System 2 vision-language module employs a pre-trained Eagle-2 Vision-Language Model (VLM) to process the robot’s visual inputs and language instructions, enabling environmental interpretation and task goal understanding. The System 3 dynamics perception module uses a general-purpose video diffusion model to capture entire video sequences and predict future frames based on current observations and task instructions.	Subsequently, the System 1 policy learning module—trained using action flow-matching—cross-attends to the output tokens from Systems 2 and 3, and employs embodiment-specific encoders and decoders to handle variable state and action dimensions for generating motor actions.	
+          The pipeline of TriVLA. TriVLA is a unified Vision-Language-Action framework built on a triple-system paradigm. System 2 employs a pre-trained Eagle-2 VLM for episodic multimodal perception, while System 3 utilizes a general-purpose VDM to model episodic dynamics and sequential changes. Together, these modules form a joint episodic world model with rich, temporally extended representations. System 1 serves as the policy module, applying action flow-matching to integrate all outputs along with robot state and action history.
           </p>
           <p>
           </p>
